@@ -1,0 +1,61 @@
+<div class="container">
+    <h1 class="my-4">TradingView</h1>
+
+    {{#if favourites}}
+        <h2>Favourites</h2>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Ask price</th>
+                    <th scope="col">Bid price</th>
+                    <th scope="col">Time</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each favourites}}
+                    <tr class="symbol-info">
+                        <td>
+                            <button class="btn btn-secondary symbol-label remove-favourite">{{this.symbol}}</button>
+                        </td>
+                        <td>{{this.askPrice}}</td>
+                        <td>{{this.bidPrice}}</td>
+                        <td>{{this.time}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{/if}}
+
+    {{#if tradingInfo}}
+        <h2>Regular pricing</h2>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Ask price</th>
+                    <th scope="col">Bid price</th>
+                    <th scope="col">Time</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each tradingInfo}}
+                    <tr class="symbol-info">
+                        <td>
+                            <button class="btn btn-secondary symbol-label add-favourite">{{this.symbol}}</button>
+                        </td>
+                        <td>{{this.askPrice}}</td>
+                        <td>{{this.bidPrice}}</td>
+                        <td>{{this.time}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{/if}}
+</div>
+
+<script src="/js/trading.js"></script>
